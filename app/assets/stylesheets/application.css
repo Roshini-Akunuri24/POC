@@ -1,0 +1,489 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree 
+ *= require_self
+ *= require_simple_calendar
+ */
+.simple-calendar {
+    width: 84%;
+    position: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid white;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: black;  
+}
+
+.calendar-heading {
+    color: black;
+}
+
+.table {
+    
+    background-color: rgba(0, 0, 0, 0);
+    /* border: 1px solid rgb(221, 221, 221); */
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    border-top: #f0f0f0;
+    padding: 1% 0% 0% 15.4%;
+    margin: 2% 0% 0% 9.2%;
+}
+
+.day {
+    
+    padding: 30px;
+    text-align: center;
+}
+
+.wday-0 {
+    color: solid black;
+    grid-column-start: 3;
+}
+.wday-1 {
+    color: solid black;
+}
+.wday-2 {
+    color: solid black;
+}
+.wday-3 {
+    color: solid black;
+}
+.wday-4 {
+    color: solid black;
+}
+.wday-5 {
+    color: solid black;
+}
+.wday-6 {
+    color: solid black;
+}
+
+.today {
+    color: white;
+}
+.past {
+    color: gray;
+}
+.future {
+    color: gray;
+}
+
+.start-date {
+    color: white;
+}
+
+.prev-month {
+    color: gray;
+}
+.next-month { 
+    color: gray;
+}
+.current-month {
+    color: black;
+}
+
+.has-events {
+    background-color: #f0f0f0;
+}
+.center{
+    width: 10%;
+}
+
+.day-of-week,
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.btn-group button {
+    background-color: rgb(227, 227, 227); /* Green background */
+    color: black; /* White text */
+    padding: 1px 24px; /* Some padding */
+    margin-top: -30px;
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    border-radius: 5px;
+    font-size: small;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: red;
+  }
+  
+/* split calendar past and future month */
+  .inactive{
+    color: gray;
+    background-color: transparent;
+    text-align: center;
+    padding: 7px;
+  }
+
+  .inactive:hover{
+    background-color:  #03a1fc;
+    border-radius: 50px;
+  }
+
+  .split {
+    height: 100%;
+    width: 18%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 30px;
+  }
+
+  .left {
+    left: 0;
+    background-color: #111;
+  }
+  
+  .day-of-the-week{
+    color: white;
+  }
+  
+  .active {
+    color: white;
+    background-color: transparent;
+  }
+
+  .month-indicator {
+    color: white;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  .day-of-week,
+  .date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  
+  .day-of-week {
+    margin-top: 1.25em;
+  }
+  
+  .day-of-week > * {
+    font-size: 0.7em;
+    color: var(--blue-grey-400);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    text-align: center;
+  }
+  
+  .date-grid button:first-child {
+    grid-column: 1;
+  }
+
+  .date-grid button { 
+    border: 0;
+    width: 4.5ch;
+    height: 4.5ch;
+    border-radius: 50%;
+  }
+  
+  .date-grid button:hover,
+  .date-grid button:focus {
+    outline: none;
+    background-color: #03a1fc;
+    color: white;
+  }
+  
+  .date-grid button:active,
+  .date-grid button.is-selected {
+    background-color: var(--teal-100);
+    color: var(--teal-900);
+  }
+
+  .icons span {
+    color: gray;
+    margin-left:20px;
+    margin-right: 30px;
+    font-size:18px
+  }
+
+  .icons span:hover{
+    border-radius: 20%;
+    background: #03a1fc;
+  }
+
+  .dot-red {
+    height: 11px;
+    width: 11px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot-yellow {
+    height: 11px;
+    width: 11px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot-green {
+    height: 11px;
+    width: 11px;
+    background-color: rgb(20, 211, 20);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .todayBtn{
+    text-align:50%;
+    left: 20%;
+    position: absolute;
+    color: rgb(212, 211, 211);
+  }
+.today-event .event-day{
+  color: white;
+  margin-top: 15px;
+}
+
+.today-event .event-date{
+  color: rgb(255, 255, 255);
+}
+
+.events{
+  color: white;
+  width:100%;
+  height: 100%;
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 4px; 
+}
+
+.events .event{
+  position: relative;
+  width: 95%;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 20px;
+  padding-left: 50px;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgb(32, 155, 212), transparent);
+  font-size: small;
+}
+
+.events .event:nth-child(even){ 
+  background: transparent;
+}
+
+.events .event:hover{
+  background:linear-gradient(90deg, var(--primary-clr), transparent);
+}
+
+.events .event .title{
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.events .event .title .event-title{
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+.events .event .title i {
+  color: var(--primary-clr);
+  font-size: 0.5rem;
+}
+
+.events .event:hover .title i,
+.events .event:hover .event-time {
+  color: white;
+}
+
+.events .event .event-time {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-left: 15px;
+  color: rgb(150, 120, 120);
+  pointer-events: none;
+}
+
+.events .event::after{
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 3rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+  color: rgb(255, 255, 255);
+  transform: translateY(-50%);
+}
+
+.events .event:hover::after {
+  display: flex;
+}
+
+.add-event-wrapper {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  width: 90%;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-50%);
+  transition: max-height 0.5s; 
+}
+
+.add-event-wrapper.active{
+  max-height: 300px;
+}
+
+.add-event-header{
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: black;
+  border-bottom: 1px solid white;
+}
+
+.add-event-header.close{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.add-event-header.close:hover{
+  color: var(--primary-clr);
+}
+
+.add-event-header .title{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.add-event-body{
+  width: 100%;
+  height: 100%;
+  display: flrx;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+}
+
+.add-event-body .add-event-input{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;  
+}
+
+.add-event-body .add-event-input input{
+  width: 100%;
+  height: 80%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: black; 
+}
+
+.add-event-body .add-event-input input::placeholder{
+  color:gray;
+}
+
+.add-event-body .add-event-input input:focus{
+  border-color: var(--primary-clr) ;
+}
+
+.add-event-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+}
+
+.add-event-btn{
+  height: 30px;
+  font-size: 12px;;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  color: black;
+  background-color: rgb(32, 155, 212);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 5px;
+  border: 1px solid rgb(32, 155, 212);
+}
+
+.add-event-btn:hover{
+  color: black;
+  background-color: transparent; 
+}
+
+.add-event{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: lightgray;
+  opacity: 0.5;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-event:hover{
+  opacity: 1;
+}
+
+.add-event i{
+  pointer-events: none;
+}

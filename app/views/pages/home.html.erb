@@ -1,0 +1,86 @@
+<div class="container mt-5 text-center">
+  <%= month_calendar(events: @events) do |date, events| %>
+    <div class = "day">
+      <%= date.day %>
+    </div>
+    <% events.each do |event| %>
+      <div class="card-header">
+        <div class="card-title">
+          <%= link_to event.calendar, event %> <br>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "+", new_event_path %> 
+  <% end %>    
+</div>
+
+<div class="split left">
+  <div class="centered">
+    <div class = "icons" >
+      <a class="month-indicator" ></a>
+      <span id ="prev" class="fa fa-angle-left prev"></span>
+      <span id= "next" class="fa fa-angle-right next"></span>
+    </div> 
+
+    <div class="day-of-week" style="color: white">
+      <div>SUN</div>  
+      <div>MON</div>
+      <div>TUE</div>
+      <div>WED</div>
+      <div>THU</div>
+      <div>FRI</div>
+      <div>SAT</div>
+    </div>
+    <div class="date-grid"></div>
+    <div class="right">
+      <div class="today-event">
+        <div class="event-day"> Wednesday </div>
+        <div class="event-date"> 6 Jan 2023</div>
+      </div>
+      <div class="events">
+        #need to add JS for these events
+      </div>
+      <div class="add-event-wrapper ">
+        <div class="add-event-header">
+          <div class="title"> Add Event </div>
+          <i class="fas fa-times close"> </i>
+        </div>
+        <div class="add-event-body">
+          <div class="add-event-input">
+            <input type="text" placeholder="Event Name" class="event-name"/>
+          </div>
+          <div class="add-event-input">
+            <input type="text" placeholder="Event Time From" class="event-time-from"/>
+          </div>
+          <div class="add-event-input">
+            <input type="text" placeholder="Event Time To" class="event-time-to"/>
+          </div>
+        </div>
+        <div class="add-event-footer">
+          <button class="add-event-btn"> add event</button>
+        </div> 
+      </div>
+    </div>
+    <button class="add-event">
+      <i class="fas fa-plus"></i>
+      </button>
+  </div>
+</div>
+
+  <div class="search fixed-top" style = "padding:5px">
+    <span class="dot-red"></span>
+    <span class="dot-yellow"></span>
+    <span class="dot-green"></span>
+  <%= link_to "+", new_event_path, {:style=>'margin-left: 13%; color: gray;', :class => "add_class"} %>
+
+  <input type="text"  style = "float: right; text-align: center;" placeholder="Search ",name="search"; >
+
+  <div class="search fixed-top" style = "padding:5px">
+    <div class="todayBtn" role="group" aria-label="Basic example">
+      <span class="fa fa-angle-left"></span>
+      <button type="button" class="btn btn-secondary" style="border-radius:0px;">Today</button>
+      <span class="fa fa-angle-right"></span>
+    </div>
+  </div>
+<%= javascript_include_tag "splitted-calendar" %>
+

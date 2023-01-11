@@ -1,0 +1,14 @@
+<div class="week-container mt-5 text-center">
+  <%= week_calendar(events: @events) do |date, events| %>
+    <div class = "day">
+      <%= date.day %>
+    </div>
+    <% events.each do |event| %>
+      <div class="card-header">
+        <div class="card-title">
+          <%= link_to event.calendar, event %> <br>
+        </div>
+      </div>
+    <% end %> 
+  <% end %>
+</div>

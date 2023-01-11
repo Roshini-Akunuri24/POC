@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  all_day: MyString
+  starts: 2022-12-14 18:30:31
+  ends: 2022-12-14 18:30:31
+  calendar: MyString
+  alert: MyString
+
+two:
+  all_day: MyString
+  starts: 2022-12-14 18:30:31
+  ends: 2022-12-14 18:30:31
+  calendar: MyString
+  alert: MyString

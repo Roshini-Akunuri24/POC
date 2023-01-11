@@ -1,0 +1,2 @@
+class SmallCalendarEvent < ApplicationRecord    
+end
